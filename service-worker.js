@@ -1,21 +1,21 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
 let urlsToCache = [
-	{ url: '/', revision: '1' },
-	{ url: '/index.html', revision: '1' },
-	{ url: '/icon-512x512.png', revision: '1' },
-	{ url: '/icon-384x384.png', revision: '1' },
-	{ url: '/icon-256x256.png', revision: '1' },
-	{ url: '/icon-192x192.png', revision: '1' },
-	{ url: '/img/epl-logo.svg', revision: '1' },
-	{ url: '/css/style.css', revision: '1' },
-	{ url: '/css/materialize.min.css', revision: '1' },
-	{ url: '/css/materialize-social.css', revision: '1' },
-	{ url: '/css/style.css', revision: '1' },
-	{ url: '/js/main.js', revision: '1' },
-	{ url: '/js/idb.js', revision: '1' },
-	{ url: '/js/materialize.min.js', revision: '1' },
-	{ url: '/manifest.json', revision: '1' },
+	{ url: './', revision: '1' },
+	{ url: './index.html', revision: '1' },
+	{ url: './icon-512x512.png', revision: '1' },
+	{ url: './icon-384x384.png', revision: '1' },
+	{ url: './icon-256x256.png', revision: '1' },
+	{ url: './icon-192x192.png', revision: '1' },
+	{ url: './img/epl-logo.svg', revision: '1' },
+	{ url: './css/style.css', revision: '1' },
+	{ url: './css/materialize.min.css', revision: '1' },
+	{ url: './css/materialize-social.css', revision: '1' },
+	{ url: './css/style.css', revision: '1' },
+	{ url: './js/main.js', revision: '1' },
+	{ url: './js/idb.js', revision: '1' },
+	{ url: './js/materialize.min.js', revision: '1' },
+	{ url: './manifest.json', revision: '1' },
 ];
 
 if (workbox) {
@@ -53,7 +53,7 @@ if (workbox) {
 	);
 	// Caching Pages
 	workbox.routing.registerRoute(
-		new RegExp('/pages/'),
+		new RegExp('./pages/'),
 		workbox.strategies.staleWhileRevalidate({
 			cacheName: 'pages',
 		})
@@ -78,7 +78,7 @@ self.addEventListener('push', function (event) {
 	}
 	var options = {
 		body: body,
-		icon: 'icon-192x192.png',
+		icon: './icon-192x192.png',
 		vibrate: [100, 50, 100],
 		data: {
 			dateOfArrival: Date.now(),
